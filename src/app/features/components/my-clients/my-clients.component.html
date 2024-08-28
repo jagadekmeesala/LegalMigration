@@ -1,0 +1,44 @@
+<div class="card-grid">
+    <p-card class="lawyer-card" *ngFor="let lawyer of getCardsForSelectedCase()">
+      <div class="card-content">
+        <!-- Profile Image and Text Content -->
+        <div class="image-container">
+          <img [src]="lawyer.profile" alt="Profile Picture" class="profile-image" />
+        </div>
+        <div class="text-content">
+          <h2>{{ lawyer.firstName }} {{ lawyer.lastName }}</h2>
+          <p>Location: {{ lawyer.location }}</p>
+          <p>Type: {{ lawyer.type }}</p>
+          <p>Details: {{ lawyer.caseDetails }}</p>
+          <p class="phone-number">
+            <span class="phone-label">Phone:</span> {{ lawyer.contact }}
+          </p>
+          <button class="view-more-btn" (click)="showDetails(lawyer)">
+            View More
+          </button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+  
+  <!-- Dialog for showing detailed information -->
+  <p-dialog [(visible)]="displayDialog" [modal]="true" [responsive]="true" [style]="{width: '50vw'}" (onHide)="onDialogHide()">
+    <ng-template pTemplate="header">
+      <h3>{{ selectedLawyer?.firstName }} {{ selectedLawyer?.lastName }}</h3>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p><strong>Location:</strong> {{ selectedLawyer?.location }}</p>
+      <p><strong>Type:</strong> {{ selectedLawyer?.type }}</p>
+      <p><strong>Case Details:</strong> {{ selectedLawyer?.caseDetails }}</p>
+      <p><strong>Phone:</strong> {{ selectedLawyer?.contact }}</p>
+      <p><strong>Case Name:</strong> {{ selectedLawyer?.caseName }}</p>
+      <p><strong>Case Hired Date:</strong> {{ selectedLawyer?.caseHiredDate }}</p>
+      <p><strong>Case Status:</strong> {{ selectedLawyer?.caseStatus }}</p>
+      <p *ngIf="selectedLawyer?.caseStatus === 'Closed'"><strong>Closed Date:</strong> {{ selectedLawyer?.closedDate }}</p>
+      <p><strong>Description:</strong> {{ selectedLawyer?.description }}</p>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <button type="button" pButton icon="pi pi-times" (click)="displayDialog=false" label="Close"></button>
+    </ng-template>
+  </p-dialog>
+  

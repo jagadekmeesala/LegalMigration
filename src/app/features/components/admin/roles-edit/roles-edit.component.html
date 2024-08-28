@@ -1,0 +1,156 @@
+<div class="p-4" >
+  <form [formGroup]="createAndEditForm">
+    <div class="grid flex flex-wrap">
+      <div class="col-6">
+        <div class="p-float-label">
+          <input
+            class="w-full"
+            formControlName="userid"
+            id="float-input"
+            type="text"
+            pInputText
+            [ngClass]="
+              createAndEditForm.get('userid')?.touched && submitted
+                ? 'ng-invalid ng-dirty'
+                : ''
+            "
+          />
+          <label for="float-input">User Id</label>
+        </div>
+        <small
+          id="username-help"
+          class="p-error"
+          *ngIf="
+            createAndEditForm.get('userid')?.touched &&
+            createAndEditForm.get('userid')?.hasError('required')
+          "
+          >UserId is required.</small
+        >
+      </div>
+      <div class="col-6">
+        <div class="p-float-label">
+          <input
+            class="w-full"
+            id="float-input"
+            formControlName="firstname"
+            type="text"
+            pInputText
+            [ngClass]="
+              createAndEditForm.get('firstname')?.touched && submitted
+                ? 'ng-invalid ng-dirty'
+                : ''
+            "
+          />
+          <label for="float-input">First Name</label>
+        </div>
+        <small
+          id="username-help"
+          class="p-error"
+          *ngIf="
+            createAndEditForm.get('firstname')?.touched &&
+            createAndEditForm.get('firstname')?.hasError('required')
+          "
+          >FirstName is required.</small
+        >
+      </div>
+    </div>
+    <div class="grid flex flex-wrap mt-3">
+      <div class="col-6">
+        <div class="p-float-label">
+          <input
+            class="w-full"
+            id="float-input"
+            formControlName="lastname"
+            type="text"
+            pInputText
+            [ngClass]="
+              (createAndEditForm.get('lastname')?.touched && submitted) 
+                ? 'ng-invalid ng-dirty'
+                : ''
+            "
+          />
+          <label for="float-input"
+            >Last Name</label
+          >
+        </div>
+        <small
+          id="username-help"
+          class="p-error"
+          *ngIf="
+            createAndEditForm.get('lastname')?.touched &&
+            createAndEditForm.get('lastname')?.hasError('required')
+          "
+          >LastName is required.</small
+        >
+      </div>
+      <div class="col-6">
+        <div class="p-float-label">
+          <p-inputNumber
+            class="w-full"
+            [size]="58"
+            formControlName="phone"
+            mode="decimal"
+            inputId="withoutgrouping"
+            [useGrouping]="false"
+            [maxlength]="10"
+            [ngClass]="
+              createAndEditForm.get('phone')?.touched && submitted
+                ? 'ng-invalid ng-dirty'
+                : ''
+            "
+          >
+          </p-inputNumber>
+          <label for="float-input">Phone</label>
+        </div>
+        <small
+          id="username-help"
+          class="p-error"
+          *ngIf="
+            createAndEditForm.get('phone')?.touched &&
+            createAndEditForm.get('phone')?.hasError('required')
+          "
+          >Phone number is required.</small
+        >
+      </div>
+    </div>
+    <div class="grid flex flex-wrap mt-3">
+      <div class="col-6">
+        <div class="p-float-label">
+          <input
+            class="w-full"
+            id="float-input"
+            formControlName="emailid"
+            type="text"
+            pInputText
+            [ngClass]="
+              createAndEditForm.get('emailid')?.touched && submitted
+                ? 'ng-invalid ng-dirty'
+                : ''
+            "
+          />
+          <label for="float-input">Email Id</label>
+        </div>
+        <small
+          id="username-help"
+          class="p-error"
+          *ngIf="
+            createAndEditForm.get('emailid')?.touched &&
+            createAndEditForm.get('emailid')?.hasError('required')
+          "
+          >EmailID is required.</small
+        >
+      </div>
+    </div>
+    <div class="grid flex flex-wrap mt-4">
+      <div class="col-2 col-offset-10 flex justify-content-end">
+        <p-button
+          class="primarybtn"
+          label="Add"
+          icon="pi pi-plus"
+          iconPos="right"
+          (onClick)="addUser()"
+        ></p-button>
+      </div>
+    </div>
+  </form>
+</div>

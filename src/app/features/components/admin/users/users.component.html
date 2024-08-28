@@ -1,0 +1,69 @@
+<p-panel header="User Details">
+  <div class="grid flex flex-wrap mt-3">
+    <div class="col-4 col-offset-8 flex justify-content-end">
+      <p-button
+        class="primarybtn"
+        label="Add"
+        icon="pi pi-plus"
+        iconPos="right"
+        (click)="adduser()"
+      ></p-button>
+    </div>
+  </div>
+  <div>
+    <div class="mt-5">
+      <div>
+        <p-table
+          class="h-25rem"
+          [value]="data"
+          styleClass="p-datatable-gridlines"
+          id="tabledata"
+          [paginator]="true"
+          [rows]="10"
+          [totalRecords]="totalRecords"
+          [rowsPerPageOptions]="[10, 20, 30]"
+          #dataTable
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th>UserId</th>
+              <th class="text-center">FirstName</th>
+              <th class="text-center">LastName</th>
+              <th class="text-center">EmailID</th>
+              <th class="text-center">PhoneNo</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-data>
+            <tr>
+              <td>{{ data.userid }}</td>
+              <td class="text-center">{{ data.firstname }}</td>
+              <td class="text-center">     
+                  {{ data.lastname }}
+              </td>
+              <td class="text-center">     
+                  {{ data.emailid }}
+              </td>
+              <td class="text-center">     
+                  {{ data.phone }}
+              </td>
+              <td class="text-center">
+                <div>
+                  <p-button
+                    [outlined]="true"
+                    icon="pi pi-pencil"
+                    iconPos="right"
+                    label="Edit"
+                    pRipple
+                    class="p-button-danger"
+                    (onClick)="editRow(data.userId)"
+                  ></p-button>
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</p-panel>

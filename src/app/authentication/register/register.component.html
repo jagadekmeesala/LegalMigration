@@ -1,0 +1,180 @@
+<p-toast> </p-toast>
+<div class="login-container">
+    <div class="login-form">
+      <div class="text-center mb-5">
+        <img src="assets/images/miraclelogo.png" alt="Image" height="50" class="mb-3">
+      </div>
+      <div class="text-900 text-3xl font-medium mb-3" style="text-align: center;">Create an account!</div>
+      <div class="signup-container">
+        <div class="absolute z-1 bottom-0 left-0">
+          <h2 class="ml-4 font-lg text-white baseHeadline">
+            <b class="text"> Legal Lokam </b><br />
+          </h2>
+          <p class="ml-4 text-left text-white">
+            © 2024 Miracle Software Systems, Inc.
+          </p>
+        </div>
+        <div class="signin p-grid">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Name Fields -->
+            <div class="p-grid">
+              <div class="p-col-4">
+                <input formControlName="firstName" type="text" class="form-input1" placeholder="First Name" />
+                <small *ngIf="loginForm.get('firstName')?.invalid && loginForm.get('firstName')?.touched" class="error-message">
+                    <!-- <br>First Name is required. -->
+                </small>
+              </div>
+              <div class="p-col-4">
+                <input formControlName="middleName" type="text" class="form-input1" placeholder="Middle Name" />
+              </div>
+              <div class="p-col-4">
+                <input formControlName="lastName" type="text" class="form-input1" placeholder="Last Name" />
+                <small *ngIf="loginForm.get('lastName')?.invalid && loginForm.get('lastName')?.touched" class="error-message">
+                    <!-- <br>Last Name is required. -->
+                </small>
+              </div>
+            </div>
+    
+            <!-- Email and Contact -->
+            <div class="p-grid">
+              <div class="p-col-6">
+                <input formControlName="email" type="email" class="form-input1" placeholder="Email" />
+                <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+                  <br>Invalid email format.
+                </small>
+              </div>
+              <div class="p-col-6">
+                <input formControlName="contactNo" type="tel" class="form-input1" placeholder="Contact Number" />
+                <small *ngIf="loginForm.get('contactNo')?.invalid && loginForm.get('contactNo')?.touched" class="error-message">
+                    <br>Contact Number must be a 10-digit number.
+                </small>
+              </div>
+            </div>
+    
+            <!-- Date of Birth and Age -->
+            <div class="form-group date-age-fields p-grid">
+              <div class="p-col">
+                <input formControlName="dob" type="date" class="form-input" />
+                <small *ngIf="loginForm.get('dob')?.invalid && loginForm.get('dob')?.touched" class="error-message">
+                    <!-- <br>Date of Birth is required. -->
+                </small>
+              </div>
+              <div class="p-col">
+                <input formControlName="age" type="number" class="form-input" placeholder="Age"/>
+                <small *ngIf="loginForm.get('age')?.invalid && loginForm.get('age')?.touched" class="error-message">
+                  <!-- <br>Age must be a positive number. -->
+                </small>
+              </div>
+            </div>
+    
+            <!-- City, District, State -->
+            <div class="form-group location-fields p-grid">
+              <div class="p-col">
+                <input formControlName="city" type="text" class="form-input" placeholder="City" />
+                <small *ngIf="loginForm.get('city')?.invalid && loginForm.get('city')?.touched" class="error-message">
+                    <!-- <br>City is required. -->
+                </small>
+              </div>
+              <div class="p-col">
+                <input formControlName="district" type="text" class="form-input" placeholder="District" />
+              </div>
+              <div class="p-col">
+                <input formControlName="state" type="text" class="form-input" placeholder="State" />
+                <small *ngIf="loginForm.get('state')?.invalid && loginForm.get('state')?.touched" class="error-message">
+                    <!-- <br>State is required. -->
+                </small>
+              </div>
+            </div>
+            
+            <!-- Gender -->
+            <div class="form-group gender-role-fields">
+              <label class="form-select-label">
+                <select formControlName="gender" class="form-select" style="width: 14rem;">
+                  <option value="" disabled selected>Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
+                </select>
+                <small *ngIf="loginForm.get('gender')?.invalid && loginForm.get('gender')?.touched" class="error-message">
+                    <!-- <br>Gender is required. -->
+                </small>
+              </label>
+            </div>
+            
+            <!-- Role Selection -->
+            <div class="form-group lawyer-fields p-grid">
+              <div class="p-col-6">
+                <label class="form-select-label">
+                  <select formControlName="role" (change)="onRoleChange($event)" class="form-select" style="width: 14rem;">
+                    <option value="" disabled selected>Register As</option>
+                    <option value="Lawyer">Lawyer</option>
+                    <option value="Client">Client</option>
+                    <option value="Firm">Firm</option>
+                  </select>
+                </label>
+                <small *ngIf="loginForm.get('role')?.invalid && loginForm.get('role')?.touched" class="error-message">
+                    <!-- <br>Role is required. -->
+                </small>
+              </div>
+            </div>
+    
+            <!-- Conditional Fields for Lawyer -->
+            <div *ngIf="showLawyerFields" class="conditional-fields">
+              <div class="form-group lawyer-fields">
+                <input formControlName="college" type="text" class="form-input" placeholder="College" />
+                <input formControlName="degree" type="text" class="form-input" placeholder="Degree" />
+                <input formControlName="experience" type="number" class="form-input" placeholder="Experience(in yrs)" />
+                <input formControlName="casesDealt" type="number" class="form-input" placeholder="No. of cases Dealt" />
+              </div>
+    
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">Law Category</legend>
+                <div class="form-radio-group">
+                  <div class="form-radio">
+                    <input formControlName="lawCategory" id="civil" type="radio" value="Civil Law" class="form-radio-input" />
+                    <label for="civil" class="form-radio-label">Civil Law</label>
+                  </div>
+                  <div class="form-radio">
+                    <input formControlName="lawCategory" id="admn" type="radio" value="Administrative Law" class="form-radio-input" />
+                    <label for="admn" class="form-radio-label">Administrative Law</label>
+                  </div>
+                  <div class="form-radio">
+                    <input formControlName="lawCategory" id="criminal" type="radio" value="Criminal Law" class="form-radio-input" />
+                    <label for="criminal" class="form-radio-label">Criminal Law</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+    
+            <!-- Conditional Fields for Client -->
+            <div *ngIf="showClientFields" class="conditional-fields">
+              <div class="form-group lawyer-fields">
+                <input formControlName="occupation" type="text" class="form-input" placeholder="Occupation" />
+                <input formControlName="activeCases" type="number" class="form-input" placeholder="Cases Involved" />
+              </div>
+            </div>
+
+            <!-- Conditional Fields for Firm -->
+            <div *ngIf="showFirmFields" class="conditional-fields">
+              <div class="form-group lawyer-fields">
+                <input formControlName="firmName" type="text" class="form-input" placeholder="Firm Name" />
+                <input formControlName="firmSize" type="number" class="form-input" placeholder="Firm Size" />
+                <input formControlName="firmCasesDealt" type="number" class="form-input" placeholder="Number of Cases Dealt" />
+              </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">
+              Register
+            </button>
+    
+            <!-- Login Prompt -->
+            <p class="login-prompt">
+              Already have an account? <a class="login-link" href="#">Login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

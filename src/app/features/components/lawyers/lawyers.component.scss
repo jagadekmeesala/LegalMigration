@@ -1,0 +1,187 @@
+.p-tabview-nav .p-tabview-title {
+  font-size: 18px;
+}
+
+.p-tabview .p-tabview-nav {
+  background: #ffffff;
+  border: 0px solid #ffffff;
+  border-width: 0 2px 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.lawyer-card {
+  display: flex;
+
+  margin: 0;
+  padding: 10px;
+}
+
+.image-container {
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text-content {
+  flex: 1;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.phone-number {
+  margin: 10px 0;
+}
+
+.phone-label {
+  font-weight: bold;
+  color: green;
+}
+
+.action-buttons {
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.p-button-primary {
+  margin-right: 10px;
+}
+
+.view-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.view-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.view-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.reach-out-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.reach-out-btn:hover {
+  background-color: #0056b3;
+}
+
+.appoint-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.appoint-btn:hover {
+  background-color: #218838;
+}
+
+.email-form {
+  padding: 20px;
+}
+
+.email-form .p-field {
+  margin-bottom: 15px;
+}
+
+.blurred-background {
+  filter: blur(5px);
+  pointer-events: none;
+}
+.dialog-custom {
+  padding: 2rem;
+}
+
+.label-custom {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.input-custom,
+.textarea-custom {
+  font-size: 1.2rem;
+  height: 3rem;
+  padding-top: 1rem;
+}
+
+.textarea-custom {
+  height: 8rem;
+  resize: none;
+  padding-top: 10px;
+}
+
+.button-custom {
+  font-size: 1.2rem;
+  width: 5rem;
+}
+
+.form-layout .p-field {
+  margin-bottom: 1.5rem;
+}
+
+.dialog-custom .p-dialog-content {
+  height: calc(60vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-content {
+  position: relative;
+}
+
+.fav-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  font-size: 3rem;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.fav-icon-active {
+  color: rgb(233, 74, 74);
+}

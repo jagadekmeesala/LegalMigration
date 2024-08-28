@@ -1,0 +1,30 @@
+<!-- dashboard.component.html -->
+<p-sidebar [(visible)]="sidebarVisible" position="left" [baseZIndex]="10000">
+  <div class="sidebar-header">
+    <h2>Menu</h2>
+    <button type="button" pButton icon="pi pi-times" (click)="toggleSidebar()" class="p-button-rounded p-button-text"></button>
+  </div>
+  <p-menu [model]="items" />
+</p-sidebar>
+
+<p-menubar [model]="menuItems"></p-menubar>
+
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Dashboard</h1>
+  </div>
+
+  <div class="dashboard-content">
+    <p-card *ngFor="let card of cards" class="dashboard-card">
+      <ng-template pTemplate="header">
+        <div class="card-header">
+          <img [src]="card.image" alt="Card image" class="card-image" />
+          <h3>{{ card.title }}</h3>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <p>{{ card.content }}</p>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

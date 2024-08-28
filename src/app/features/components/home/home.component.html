@@ -1,0 +1,157 @@
+
+
+<!-- carousel.component.html -->
+<!-- home.component.html -->
+
+
+<div class="carousel-container">
+    <p-carousel
+      [value]="images"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+      [showIndicators]="true"
+      [showNavigators]="true"
+      class="custom-carousel"
+      [style]="{
+        height: '360px',
+        background: 'none',
+        border: 'none',
+        padding: '0',
+        margin: '0',
+        position: 'relative',
+        width: '100%'
+      }"
+    >
+      <ng-template let-item pTemplate="item">
+        <div class="carousel-item">
+          <img [src]="item.url" [alt]="'Image ' + item.url" class="carousel-image" />
+          <div class="carousel-card-overlay">
+            <div class="card-content">
+                <blockquote><i><h5>{{ item.quote }}</h5></i></blockquote>
+              <h5 class="last"><i>--&nbsp;{{ item.heading }}</i></h5>
+            </div>
+          </div>
+          <div class="small-images-container">
+         <img *ngFor="let smallImage of item.smallImage" [src]="smallImage" class="small-image" [alt]="'Small Image ' + item.heading" />
+           
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  
+  
+
+  <div class="overflow-hidden items flex flex-wrap justify-content-between">
+    <!-- First Row -->
+    <div class="fixed-size color1 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>17,890</h3>
+        <p>Cases</p>
+      </div>
+    </div>
+    <div class="fixed-size color2 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>13,000</h3>
+        <p>Lawyers</p>
+      </div>
+    </div>
+    <div class="fixed-size color3 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>4</h3>
+        <p>Clients</p>
+      </div>
+    </div>
+  
+    <!-- Second Row -->
+    <div class="fixed-size color4 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>10,789</h3>
+        <p>Firms</p>
+      </div>
+    </div>
+    <div class="fixed-size color5 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>12,190</h3>
+        <p>Closed Cases</p>
+      </div>
+    </div>
+    <div class="fixed-size color6 font-bold m-2 px-3 border-round py-2">
+      <div class="text-center">
+        <h3>17,908</h3> 
+        <p>Active Users</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+<!-- 
+<div class="overflow-hidden items">
+ 
+
+
+
+  <div class=" flex">
+    <div class="flex-auto flex-column align-items-center justify-content-center color1 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>17,090</h3>
+            <p>Cases</p>
+        </div>
+       
+    </div>
+    <div class="flex-auto flex-column align-items-center justify-content-center color2 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>13,000</h3>
+            <p>Lawyers</p>
+        </div>
+        
+    </div>
+    <div class="flex-auto flex-column align-items-center justify-content-center color3 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>18,000</h3>
+            <p>Clients</p>
+        </div>
+      
+    </div>
+
+    
+  </div>
+
+
+
+  <div class=" flex">
+    
+    <div class="flex-auto flex-column align-items-center justify-content-center color4 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>10,789</h3>
+            <p>Firms</p>
+        </div>
+        
+    </div>
+    <div class="flex-auto flex-column align-items-center justify-content-center color5 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>12,190</h3>
+            <p>Closed Cases</p>
+        </div>
+       
+    </div>
+    <div class="flex-auto flex-column align-items-center justify-content-center color6 font-bold m-2 px-3 border-round py-2">
+        <div class="text-center">
+            <h3>17,908</h3>
+            <p>Active Users</p>
+        </div>
+       
+    </div>
+</div>
+
+    
+  </div> -->

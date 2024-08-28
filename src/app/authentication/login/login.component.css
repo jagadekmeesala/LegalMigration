@@ -1,0 +1,116 @@
+.signup-container {
+  margin-top: 30%;
+  text-align: center;
+}
+
+.signup-container h2 {
+  margin-bottom: 20px;
+}
+
+.signup-container input {
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.signup-container button {
+  background-color: #00aae7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10%;
+  width: 40%;
+}
+
+.signup-container button:hover {
+  background-color: #33bbec;
+}
+
+.signin {
+  margin-top: 10%;
+}
+
+.forget-password-link {
+  color: #00aae7;
+  text-decoration: none;
+  position: absolute;
+  right: 15px; 
+  top: 100%;   
+  transform: translateY(10%); 
+  font-size: 14px;
+}
+
+
+.remember-me {
+  display: flex;
+  margin-left: 14px;
+  margin-top: 2rem;
+}
+
+.login-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  background: url("../../../assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-form {
+  background: #ffff;
+  padding: 40px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  height: inherit;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;}
+
+
+.errorMessage {
+  text-align: start;
+  margin-left: 5%;
+  margin-top: -1%;
+  font-size: 12px;
+  margin-bottom: 2%;
+}
+
+.baseHeadline {
+  font-size: 35px;
+  line-height: 10px;
+  font-family: "Montserrat", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  height: 275px;
+}
+
+.p-inputtext.ng-dirty.ng-invalid {
+  border-color: red;
+}
+.p-inputtext.ng-dirty.ng-invalid:enabled:focus {
+  box-shadow: 0 0 0 0.2rem #f29a9a;
+}
+.text {
+  margin-top: 1022px;
+  height: 100px;
+}
+
+.pi-eye:before{
+  padding-right: 12px;
+}

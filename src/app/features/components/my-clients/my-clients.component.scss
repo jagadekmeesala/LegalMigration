@@ -1,0 +1,145 @@
+/* Container for the card grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 16px; /* Space between cards */
+    padding: 16px; /* Padding around the grid */
+  }
+  
+  /* Ensure card styling is preserved */
+  .lawyer-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0; /* Remove margin to align with grid spacing */
+    padding: 10px;
+  }
+  
+  /* Flexbox layout for card content */
+  .card-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Profile image styling */
+  .image-container {
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Text content styling */
+  .text-content {
+    flex: 1;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  /* Phone number styling */
+  .phone-number {
+    margin: 10px 0;
+  }
+  
+  .phone-label {
+    font-weight: bold;
+    color: green; /* Green label */
+  }
+  
+  /* Action buttons styling */
+  .action-buttons {
+    margin-top: 10px;
+  }
+  
+  .p-button-primary {
+    margin-right: 10px;
+  }
+  
+  .view-more-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .view-more-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .view-more-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  
+  // /* Grid layout for side-by-side cards */
+  // .card-grid {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  //   gap: 16px; /* Space between the cards */
+  //   padding: 16px; /* Optional: add padding around the grid */
+  // }
+  
+  // /* Optional styling for the card */
+  // .lawyer-card {
+  //   border: 1px solid #ddd;
+  //   border-radius: 8px;
+  //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  //   background: #fff;
+  //   overflow: hidden;
+  // }
+  
+  // .card-content {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  
+  // .image-container {
+  //   text-align: center;
+  //   padding: 16px;
+  // }
+  
+  // .profile-image {
+  //   width: 100px; /* Adjust size as needed */
+  //   height: 100px; /* Adjust size as needed */
+  //   border-radius: 50%;
+  // }
+  
+  // .text-content {
+  //   padding: 16px;
+  // }
+  
+  // .phone-number {
+  //   margin-top: 16px;
+  // }
+  
+  // .phone-label {
+  //   font-weight: bold;
+  // }
+  
+  
+  
+  

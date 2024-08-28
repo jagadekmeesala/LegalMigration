@@ -1,0 +1,106 @@
+<p-toast></p-toast>
+<div class="login-container">
+  <div class="login-form">
+    <div class="signup-container">
+      <img src="assets/images/miraclelogo.png" width="60%" />
+      
+      <div class="absolute z-1 bottom-0 left-0">
+        <h2 class="ml-4 font-lg text-white baseHeadline">
+          <b class="text"> Legal Lokam </b><br />
+        </h2>
+        <p class="ml-4 text-left text-white">
+          © 2024 Miracle Software Systems, Inc.
+        </p>
+      </div>
+      <div class="signin">
+        <form [formGroup]="loginForm">
+          <div class="login-input-wrapper">
+            <input
+              [ngClass]="
+                loginForm.get('userName')?.touched &&
+                loginForm.get('userName')?.invalid
+                  ? 'ng-invalid ng-dirty'
+                  : ''
+              "
+              type="text"
+              formControlName="userName"
+              autocomplete="off"
+              placeholder="Username"
+              pInputText
+            />
+            <div class="errorMessage invalid-text">
+              <span
+                class="text-base"
+                *ngIf="
+                  loginForm.controls['userName'].touched &&
+                  loginForm.controls['userName'].invalid &&
+                  loginForm.controls['userName'].hasError('required')
+                "
+                >This field is required
+              </span>
+            </div>
+          </div>
+
+          <div class="login-input-wrapper password-wrapper">
+            <input
+              [ngClass]="
+                loginForm.get('password')?.touched &&
+                loginForm.get('password')?.hasError('required')
+                  ? 'ng-invalid ng-dirty'
+                  : ''
+              "
+              [type]="passwordFieldType"
+              formControlName="password"
+              autocomplete="off"
+              placeholder="Password"
+              pInputText
+            />
+            <i
+              class="pi"
+              [ngClass]="{
+                'pi-eye': passwordFieldType === 'password',
+                'pi-eye-slash': passwordFieldType === 'text'
+              }"
+              (click)="togglePasswordVisibility()"
+            ></i>
+            <div class="errorMessage">
+              <span
+                class="invalid-text text-base"
+                *ngIf="
+                  loginForm.controls['password'].touched &&
+                  loginForm.controls['password'].invalid &&
+                  loginForm.controls['password'].hasError('required')
+                "
+                >This field is required
+              </span>
+              <a href="#" class="forget-password-link text-base">
+                Forgot Password ?
+              </a>
+            </div>
+          </div>
+
+          <div class="remember-me">
+            <span><input type="checkbox" /></span>&nbsp;&nbsp;
+            <span> Remember Me</span>
+          </div>
+          <br> 
+          <div>
+            <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+            <a href = "http://localhost:4200/#/auth/register" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create now! </a>
+          </div>
+        </form>
+        <button
+          [disabled]="loginForm.invalid"
+          (click)="signIn()"
+          pButton
+          type="button"
+          label="Sign In"
+        ></button>
+
+        <div *ngIf="errorMessage" class="error-message text-red-500 mt-4">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

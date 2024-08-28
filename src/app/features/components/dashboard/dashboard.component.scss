@@ -1,0 +1,61 @@
+/* dashboard.component.css */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .dashboard-header {
+    background-color: #007ad9;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .dashboard-card {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    position: relative;
+    padding: 15px;
+    background: #f5f5f5;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007ad9;
+    color: white;
+  }
+  
+  .sidebar-header h2 {
+    margin: 0;
+  }
+  
+  .p-menubar {
+    margin-bottom: 20px;
+  }
+  

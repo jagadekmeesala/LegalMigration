@@ -1,0 +1,48 @@
+<div
+  class="layout-wrapper"
+  (click)="onLayoutClick()"
+  [ngClass]="{
+    'layout-static': isStatic(),
+    'layout-overlay': isOverlay(),
+    'layout-overlay-active': overlayMenuActive,
+    'layout-horizontal': isHorizontal(),
+    'layout-slim': isSlim(),
+    'layout-static-inactive': staticMenuDesktopInactive,
+    'layout-mobile-active': staticMenuMobileActive,
+    'layout-menu-dark': app.darkMenu,
+    'layout-menu-light': !app.darkMenu,
+    'p-input-filled': app.inputStyle === 'filled',
+    'p-ripple-disabled': !app.ripple
+  }"
+>
+  <app-topnav></app-topnav>
+
+  <div class="layout-menu-container" (click)="onMenuClick($event)">
+    <div style="background-color: #ffff; text-align: center">
+      <div href="#">
+        <!-- <img
+          id="layout-menu-logo"
+          src="assets/images/logo-black.png"
+          library="babylon-layout"
+          style="width: 80%; padding: 7px 0"
+        /> -->
+        <h2>Legal Lokam</h2>
+      </div>
+    </div>
+    <div class="layout-menu-wrapper">
+      <div class="menu-scroll-content">
+        <!-- <app-inline-profile *ngIf="app.profileMode=='inline'&&!isHorizontal()"></app-inline-profile> -->
+        <app-menu></app-menu>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout-main">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer *ngIf="false"></app-footer>
+  </div>
+  <div class="layout-mask"></div>
+</div>

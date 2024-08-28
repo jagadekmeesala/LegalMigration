@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ .calendar-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.calendar-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+ .calendar-navigation {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.calendar-navigation button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-navigation button:hover {
+  background-color: #e0e0e0;
+}
+
+.calendar-navigation button:focus {
+  outline: none;
+}
+
+
+mwl-calendar-month-view {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+.task-form {
+  // margin: 20px 0;
+  padding: 10px;
+  background-color: #ffffff;
+  // border-radius: 4px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.task-form button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+}
+
+ .task-details {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-details h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.task-details p {
+  margin: 5px 0;
+}
+
+.task-details strong {
+  font-weight: bold;
+}
+.flexCal{
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+}
+
+
+
+.popup-overlay {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  justify-content: center;  
+  align-items: center;  
+  z-index: 1000; 
+  }
+ 
+  .task-form {
+  // position: relative;  
+  // background: white; 
+  // padding: 20px; 
+  // border-radius: 8px;  
+  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+  // width: 300px;  
+  // box-sizing: border-box;  
+  }
+  
+  
+  .task-form input {
+  display: block; 
+  width: 100%;  
+  margin-bottom: 10px; 
+  padding: 8px; 
+  border: 1px solid #CCC; 
+  border-radius: 4px;  
+  font-size: 16px;  
+  .close-button {
+  position: absolute;  
+  top: 10px; 
+  right: 10px; 
+  background-color: #DC3545; 
+  border: none;  
+  color: white;  
+  border-radius: 50%;  
+  width: 30px;  
+  height: 30px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;  // .task-form button:hover, .close-button:hover {
+    // opacity: 0.9;  
+    // }
+  }
+ 
+  button {
+  background-color: #007BFF;  
+  color: white; 
+  border: none;  
+  border-radius: 4px;  
+  padding: 10px 15px;  
+  font-size: 16px;  
+  cursor: pointer; 
+  margin-right: 10px;  
+  }
+  
+ 
+  
+  /* styles.css or your component-specific CSS file */
+
+  :host .button-schedule-meeting {
+  background-color: #007ad9; /* Primary color */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   /* Subtle shadow for depth */
+}
+
+.button-schedule-meeting:hover {
+  background-color: #005bb5 !important; /* Darker shade for hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+}
+
+.button-schedule-meeting:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(0, 122, 217, 0.3); /* Focus outline with color matching button */
+}
+
+.button-schedule-meeting:active {
+  background-color: #004a9f; /* Even darker shade for active state */
+}
+
+  
+  .task-form button:hover, .close-button:hover {
+  opacity: 0.9;  
+  }
+  }

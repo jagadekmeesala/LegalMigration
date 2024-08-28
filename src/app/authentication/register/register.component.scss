@@ -1,0 +1,325 @@
+.signup-container {
+    margin-top: 5px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+}
+
+.signup-container input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px; /* Ensure all inputs have equal padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.signup-container button {
+    background-color: #00aae7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10%;
+    width: 40%;
+}
+
+.signup-container button:hover {
+    background-color: #33bbec;
+}
+
+.signin {
+    margin-top: 40px;
+}
+
+.forget-password-link {
+    color: #00aae7;
+    text-decoration: none;
+    position: absolute;
+    right: 4rem;
+}
+
+.remember-me {
+    display: flex;
+    margin-left: 14px;
+    margin-top: 2rem;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: url("https://png.pngtree.com/thumb_back/fh260/background/20230714/pngtree-d-render-of-lawyer-s-desk-with-judge-s-gavel-scales-image_3888409.jpg") no-repeat center
+      center fixed;
+    background-size: cover;
+}
+
+.login-form {
+    background: #ffff;
+    padding: 80px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.errorMessage {
+    text-align: start;
+    margin-left: 5%;
+    margin-top: -1%;
+    font-size: 12px;
+    margin-bottom: 2%;
+}
+
+.baseHeadline {
+    font-size: 28px;
+    line-height: 40px;
+    margin: 10px 0;
+    font-family: "Montserrat", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+.p-inputtext.ng-dirty.ng-invalid {
+    border-color: red;
+}
+
+.p-inputtext.ng-dirty.ng-invalid:enabled:focus {
+    box-shadow: 0 0 0 0.2rem #f29a9a;
+}
+
+.form-fieldset {
+    border: none;
+    padding-bottom: 10%;
+    margin: 0;
+}
+
+.form-legend {
+    margin-bottom: 10px;
+}
+
+.form-radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.form-radio {
+    display: flex;
+    align-items: center;
+}
+
+.form-radio-input {
+    margin-right: 5px;
+}
+
+.form-select-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* General Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.form-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 700px; /* Adjust to your preference */
+    width: 100%;
+}
+
+.form-heading {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-content {
+    display: flex;
+    gap: 10px;
+}
+
+.form-image {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.form-container {
+    flex: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form groups */
+}
+
+.form-group {
+    display: grid;
+    gap: 10px;
+}
+
+.name-fields {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-input, .form-input1 {
+    padding: 10px; /* Ensure equal padding */
+    border: 1px solid #ddd;
+    border-radius: 9px;
+}
+
+.form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-legend {
+    margin-bottom: 10px;
+}
+
+.form-radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.form-radio {
+    display: flex;
+    align-items: center;
+}
+
+.form-radio-input {
+    margin-right: 5px;
+}
+
+.form-select-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.conditional-fields {
+    margin-top: 20px;
+}
+
+.form-group.lawyer-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto; /* Adjust the space between items */
+}
+
+.form-group.lawyer-fields input {
+    width: 94%; /* Ensure inputs fill their grid area */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.arrow-down {
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    margin-top: 4px;
+    width: 180px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown-item {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.image-section {
+    flex: 1; /* Takes half of the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    width: 700px;
+}

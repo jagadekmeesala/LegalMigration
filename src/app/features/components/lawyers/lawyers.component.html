@@ -1,0 +1,123 @@
+<div [ngClass]="{ 'blurred-background': view }">
+  <p-tabView>
+    <p-tabPanel header="All Lawyers">
+      <div class="card-grid">
+        <p-card
+          class="lawyer-card"
+          *ngFor="let lawyer of getCardsForSelectedCase()"
+        >
+          <div class="card-content">
+            <button
+              class="fav-icon"
+              [ngClass]="{ 'fav-icon-active': isFavorite(lawyer) }"
+              (click)="toggleFavorite(lawyer)"
+              aria-label="Favorite"
+            >
+              <i
+                [ngClass]="
+                  isFavorite(lawyer) ? 'pi pi-heart-fill' : 'pi pi-heart'
+                "
+              ></i>
+            </button>
+            <div class="image-container">
+              <img
+                [src]="lawyer.profile"
+                alt="Profile Picture"
+                class="profile-image"
+              />
+            </div>
+            <div class="text-content">
+              <h2>{{ lawyer.firstName }} {{ lawyer.lastName }}</h2>
+              <p>Location: {{ lawyer.location }}</p>
+              <p>Type: {{ lawyer.type }}</p>
+              <p>Details: {{ lawyer.caseDetails }}</p>
+              <p class="phone-number">
+                <span class="phone-label">Phone:</span> {{ lawyer.contact }}
+              </p>
+              <div class="action-buttons">
+                <p-button
+                  (click)="showDialog()"
+                  icon="pi pi-external-link"
+                  label="Reach Out"
+                  class="p-mr-2 p-4"
+                ></p-button>
+                <p-button
+                  (click)="showAppointDialog()"
+                  icon="pi pi-calendar"
+                  label="Appoint"
+                ></p-button>
+              </div>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Favourites">
+      <div class="card-grid">
+        <p-card class="lawyer-card" *ngFor="let lawyer of favoriteLawyers">
+          <div class="card-content">
+            <div class="image-container">
+              <img
+                [src]="lawyer.profile"
+                alt="Profile Picture"
+                class="profile-image"
+              />
+            </div>
+            <div class="text-content">
+              <h2>{{ lawyer.firstName }} {{ lawyer.lastName }}</h2>
+              <p>Location: {{ lawyer.location }}</p>
+              <p>Type: {{ lawyer.type }}</p>
+              <p>Details: {{ lawyer.caseDetails }}</p>
+              <p class="phone-number">
+                <span class="phone-label">Phone:</span> {{ lawyer.contact }}
+              </p>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>
+
+<p-dialog
+  header="Contact Lawyer"
+  [(visible)]="view"
+  [style]="{ width: '60vw', height: '45vh' }"
+  [modal]="true"
+  [dismissableMask]="true"
+  [draggable]="false"
+  class="dialog-custom"
+>
+  <form (ngSubmit)="submitContactForm()" class="p-fluid form-layout">
+    <div class="p-field">
+      <label for="subject" class="label-custom">Subject</label>
+      <input
+        id="subject"
+        type="text"
+        pInputText
+        [(ngModel)]="emailSubject"
+        name="subject"
+        class="input-custom"
+      />
+    </div>
+    <div class="p-field">
+      <label for="description" class="label-custom" style="padding-top: 1rem"
+        >Description</label
+      >
+      <textarea
+        id="description"
+        pInputTextarea
+        [(ngModel)]="emailBody"
+        name="description"
+        class="textarea-custom"
+      ></textarea>
+    </div>
+    <div
+      class="p-field"
+      style="padding-top: 1rem; width: 15rem; align-self: center"
+    >
+      <p-button type="submit" label="Submit" class="button-custom"></p-button>
+    </div>
+  </form>
+</p-dialog>

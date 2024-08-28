@@ -1,0 +1,37 @@
+<div class="card-container">
+    <p-card *ngFor="let meeting of meetings" class="meeting-card">
+        <ng-template pTemplate="header">
+            <div class="card-header">
+                <h3>{{ meeting.subject }}</h3>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="content">
+            <p><strong>Host:</strong> {{ meeting.host }}</p>
+            <p><strong>Number of Attendees:</strong> {{ meeting.numberOfAttendees }}</p>
+            <p><strong>Meeting Time:</strong> {{ meeting.meetingTime | date:'medium' }}</p>
+            <p><strong>Duration:</strong> {{ meeting.duration }}</p>
+            <p>
+                <button (click)="togglePopup(meeting)" style="background-color: rgb(236, 217, 195); border-color:rgb(236, 217, 196);padding: 10px; border-radius: 10px; margin-left: 50px;">
+                    View more
+                </button>
+            </p>
+        </ng-template>
+    </p-card>
+</div>
+
+<!-- Popup -->
+<div *ngIf="selectedMeeting" class="popup-overlay" (click)="togglePopup(selectedMeeting)">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <h3>{{ selectedMeeting.subject }} - Details</h3>
+        <p>List of Attendees</p>
+        <ul *ngFor="let a of selectedMeeting.attendees">
+            <li>{{ a.name }}</li>
+        </ul>
+        <button (click)="togglePopup(selectedMeeting)" class="close-btn">X</button>
+        <!-- New Buttons -->
+        <div class="popup-buttons">
+            <button (click)="showAgenda(selectedMeeting)">Agenda</button>
+            <button (click)="showMoM(selectedMeeting)">MoM</button>
+        </div>
+    </div>
+</div>
