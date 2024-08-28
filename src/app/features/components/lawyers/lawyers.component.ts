@@ -136,7 +136,7 @@ export class LawyersComponent {
     this.view = true;
   }
   closeDialog() {
-    this.view = false; // Close the dialog
+    this.view = false; 
   }
   showAppointDialog() {
     this.appointView = true;
@@ -148,7 +148,7 @@ export class LawyersComponent {
       summary: 'Form Submitted',
       detail: 'Your message has been sent to the lawyer.',
     });
-    this.view = false; // Close the dialog
+    this.view = false; 
   }
 }
 
